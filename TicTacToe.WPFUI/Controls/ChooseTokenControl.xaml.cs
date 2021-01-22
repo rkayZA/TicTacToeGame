@@ -12,21 +12,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using TicTacToe.WPFUI.Controls;
 
-namespace TicTacToe.WPFUI
+namespace TicTacToe.WPFUI.Controls
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for ChooseTokenControl.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class ChooseTokenControl : UserControl
     {
-        public static MainWindow _mainWindow;
-        public MainWindow()
+        public ChooseTokenControl()
         {
             InitializeComponent();
-            GameContent.Content = new WelcomeControl();
-            _mainWindow = this;
         }
     }
 }
