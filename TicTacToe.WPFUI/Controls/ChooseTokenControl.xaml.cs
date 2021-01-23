@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TicTacToe.Library;
 
 namespace TicTacToe.WPFUI.Controls
 {
@@ -23,6 +24,19 @@ namespace TicTacToe.WPFUI.Controls
         public ChooseTokenControl()
         {
             InitializeComponent();
+        }
+
+        private void choiceXBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Global.playerToken = choiceXBtn.Content.ToString();
+            Global.opponentToken = choiceOBtn.Content.ToString();
+            MainWindow._mainWindow.GameContent.Content = new MainGameControl();
+        }
+
+        private void choiceOBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Global.playerToken = choiceOBtn.Content.ToString();
+            Global.opponentToken = choiceXBtn.Content.ToString();
         }
     }
 }

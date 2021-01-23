@@ -27,16 +27,25 @@
         </StackPanel>
         
         <!-- Token choice -->
-        <StackPanel Grid.Row="1" Grid.Column="0">
-            <Border BorderThickness="2" BorderBrush="Black" Margin="6 6 3 6">
-                <TextBlock  FontSize="128" Text="X" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" />
-            </Border>
+        <StackPanel Grid.Row="1" Grid.Column="0" Margin="6 6 3 6">
+            <Button x:Name="choiceXBtn" 
+                    FontSize="128" 
+                    Content="X" 
+                    HorizontalAlignment="Stretch" 
+                    VerticalAlignment="Stretch" 
+                    Background="White"
+                    Click="choiceXBtn_Click"/>
         </StackPanel>
 
-        <StackPanel Grid.Row="1" Grid.Column="1">
-            <Border BorderThickness="2" BorderBrush="Black" Margin="3 6 6 6">
-                <TextBlock FontSize="128" Text="O" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center"/>
-            </Border>
+        <StackPanel Grid.Row="1" Grid.Column="1" Margin="3 6 6 6">
+            <Button 
+                x:Name="choiceOBtn" 
+                FontSize="128" 
+                Content="O" 
+                HorizontalAlignment="Stretch" 
+                VerticalAlignment="Stretch" 
+                Background="White"
+                Click="choiceOBtn_Click"/>
         </StackPanel>
 
 
