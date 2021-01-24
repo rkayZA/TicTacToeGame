@@ -7,11 +7,12 @@
              mc:Ignorable="d"
              Background="White"
              FontSize="22"
-             d:DesignHeight="400" d:DesignWidth="360">
+             d:DesignHeight="450" d:DesignWidth="360">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="auto" /> <!-- Heading & Welcome-->
-            <RowDefinition Height="auto" /> <!-- Start Game-->
+            <RowDefinition Height="3*" /> <!-- Heading & Welcome-->
+            <RowDefinition Height="1*" /> <!-- Start Game-->
+            <RowDefinition Height="auto" /> <!-- Exit -->
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
@@ -20,7 +21,7 @@
         </Grid.ColumnDefinitions>
 
         <!-- Heading and Welcome-->
-        <StackPanel Orientation="Vertical" Grid.Row="0" Grid.ColumnSpan="3" HorizontalAlignment="Center" Margin="0 0 0 50">
+        <StackPanel Orientation="Vertical" Grid.Row="0" Grid.ColumnSpan="3" HorizontalAlignment="Center" Margin="0 0 0 10">
             <TextBlock FontSize="36" Text="Tic Tac Toe" HorizontalAlignment="Center" />
             <TextBlock Text="(Noughts and croses)" FontSize="14" HorizontalAlignment="Center" />
             <Image HorizontalAlignment="Center" Source="/Controls/tic-tac-toe-150614_640.jpg" Stretch="Fill" Width="60" Height="60" Margin="0 8"/>
@@ -33,10 +34,11 @@ The player who succeeds in placing three of their marks in a diagonal, horizonta
 
         <!-- Start Game -->
         <TextBlock Text="Click" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <Button x:Name="StartGameBtn" FontWeight="Bold" Grid.Row="1" Grid.Column="1" Content="Start" Padding="15 5" Click="StartGameBtn_Click"/>
+        <Button x:Name="StartGameBtn" FontWeight="Bold" Grid.Row="1" Grid.Column="1" Content="Start" Click="StartGameBtn_Click" VerticalAlignment="Center" Foreground="Green" Background="White"/>
         <TextBlock Text="to begin" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
-        
+        <!-- Exit -->
+        <Button x:Name="ExitGameBtn" FontSize="18" Foreground="Red" Grid.Row="2" Grid.Column="1" Content="Exit Game" VerticalAlignment="Bottom" Margin="0 18 0 0" Click="ExitGameBtn_Click"/>
 
     </Grid>
 </UserControl>

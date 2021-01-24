@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <None Remove="Controls\tic-tac-toe-150614_640.jpg" />
+    <None Remove="tic-tac-toe-150614_640.jpg" />
   </ItemGroup>
 
   <ItemGroup>
@@ -20,6 +21,7 @@
 
   <ItemGroup>
     <Resource Include="Controls\tic-tac-toe-150614_640.jpg" />
+    <Resource Include="tic-tac-toe-150614_640.jpg" />
   </ItemGroup>
 
 </Project>

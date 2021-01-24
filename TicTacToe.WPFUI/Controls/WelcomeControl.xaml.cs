@@ -30,5 +30,10 @@ namespace TicTacToe.WPFUI.Controls
         {
             MainWindow._mainWindow.GameContent.Content = new ChooseTokenControl();
         }
+
+        private void ExitGameBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
     }
 }

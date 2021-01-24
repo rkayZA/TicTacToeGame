@@ -37,6 +37,7 @@ namespace TicTacToe.WPFUI.Controls
         {
             Global.playerToken = choiceOBtn.Content.ToString();
             Global.opponentToken = choiceXBtn.Content.ToString();
+            MainWindow._mainWindow.GameContent.Content = new MainGameControl();
         }
     }
 }

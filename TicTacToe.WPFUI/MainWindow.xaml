@@ -5,11 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TicTacToe.WPFUI"
         mc:Ignorable="d"
-        Title="Tic Tac Toe (or Noughts and Crosses)" Height="550" Width="400">
-    <Grid Margin="10">
-        <!-- Game Screen-->
-        <ContentControl x:Name="GameContent" Grid.Row="1" Margin="0 10 0 0" VerticalAlignment="Center"/>        
-        
-        
-    </Grid>
+        Title="Tic Tac Toe (or Noughts and Crosses)" Height="500" Width="400" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Icon="/tic-tac-toe-150614_640.jpg">
+        <Grid Margin="10">
+            <!-- Game Screen-->
+            <ContentControl x:Name="GameContent" Grid.Row="1" VerticalAlignment="Center"/>        
+        </Grid>
+    
+
+    
 </Window>

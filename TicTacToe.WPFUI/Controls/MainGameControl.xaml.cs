@@ -25,29 +25,40 @@ namespace TicTacToe.WPFUI.Controls
         {
             InitializeComponent();
             nowPlayingTokenText.Text = Global.playerToken;
+            Global.ClearPlacemements();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Button clickedButton = sender as Button;
             clickedButton.Content = nowPlayingTokenText.Text;
-            
             clickedButton.IsEnabled = false;
+            int buttonId = int.Parse(clickedButton.Uid);
+            Global.tokenPlacements[buttonId] = nowPlayingTokenText.Text;
             Global.cellsToClick -= 1;
-            // TODO: Check for a winning combination and end game if there is one. 
-            // TODO: If all grid cells have been chosen with no winning combination end the game
+
+            bool gameContinues = Global.CheckGameOver(Global.tokenPlacements);
+
             if (Global.cellsToClick == 0)
             {
-                MessageBox.Show("GameOver");
+                nowPlayingText.Text = "DRAW!!";
+                nowPlayingTokenText.Visibility = Visibility.Collapsed;
+                appButtons.Visibility = Visibility.Visible;
             }
             else
             {
-                
-                TogglePlayerToken();
-                
+                if (gameContinues == false)
+                {
+                    nowPlayingText.FontWeight = FontWeights.Bold;
+                    nowPlayingText.Foreground = Brushes.Green;
+                    nowPlayingText.Text = $"{ nowPlayingTokenText.Text} WINS!!! ";
+                    nowPlayingTokenText.Visibility = Visibility.Collapsed;
+                    appButtons.Visibility = Visibility.Visible;
+                }else
+                {
+                    TogglePlayerToken();
+                }
             }
-           
-
         }
 
         private void TogglePlayerToken()
@@ -61,6 +72,16 @@ namespace TicTacToe.WPFUI.Controls
                 nowPlayingTokenText.Text = Global.playerToken;
             }
             
+        }
+
+        private void RestartBtn_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow._mainWindow.GameContent.Content = new ChooseTokenControl();
+        }
+
+        private void ExitBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
         }
     }
 }
